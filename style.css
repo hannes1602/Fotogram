@@ -2,8 +2,7 @@
     --primary-color: #06171E;
     --secondary-color: #09212A;
     --arrow-color: #FD5B4F;
-    --texts: "Figtree_normal";
-    --headlines: "Figtree_bold";
+    --texts: "Figtree";
 }
 
 /* figtree-regular - latin */
@@ -71,8 +70,48 @@ header{
     justify-content: flex-start;
     align-items: center;
 
-    padding: 20px 140px 20px 241px;
+    padding-left: 140px;
     
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 160px 0px;
+}
+
+main h1 {
+    color: white;
+    font-family: var(--texts);
+    font-weight: 800;
+    font-size: 52px;
+}
+
+main img {
+    height: 150px;
+    width: 150px;
+
+    object-fit: cover;
+
+    border: 2px solid #124658;
+    border-radius: 16px;
+}
+
+.imgs_first_row {
+    display: flex;
+
+    gap: 16px;
+    padding-top: 80px;
+}
+
+.imgs_second_row {
+    display: flex;
+
+    gap: 16px;
+    padding-top: 32px;
 }
 
 footer {
