@@ -90,7 +90,16 @@ main h1 {
     font-size: 52px;
 }
 
-main img {
+.img_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.img_section img {
     height: 150px;
     width: 150px;
 
