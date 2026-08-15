@@ -19,27 +19,56 @@
     </header>
 
     <main>
-        <h1>Your personal photo album</h1>
 
-        <section class="img_section">
-            <section class="imgs_first_row">
-                <img src="./img/1_Bild.jpg" alt="pic_ice" onclick="openOverlay('./img/1_Bild.jpg')"> <!--Function overlay wird bei Klick ausgeführt-->
-                <img src="./img/2_Bild.jpg" alt="city_night">
-                <img src="./img/3_Bild.jpg" alt="clouds">
-                <img src="./img/4_Bild.jpg" alt="bird">
-                <img src="./img/5_Bild.jpg" alt="hurricane">
-                <img src="./img/6_Bild.jpg" alt="winter_lake">
-                <img src="./img/7_Bild.jpg" alt="duck">
-            </section>
+        <div class="content_section">
+            <h1>Your personal photo album</h1>
 
-            <section class="imgs_second_row">
-                <img src="./img/8_Bild.jpg" alt="night_man">
-                <img src="./img/9_Bild.jpg" alt="bird_stone">
-                <img src="./img/10_Bild.jpg" alt="leopard">
-                <img src="./img/11_Bild.jpg" alt="mountains">
-                <img src="./img/12_Bild.jpg" alt="winter_tree">
-            </section>
-        </section>
+            <div class="img_section">
+                <section class="imgs_first_row">
+                    <img src="./img/1_Bild.jpg" alt="pic_ice" onclick="openOverlay('./img/1_Bild.jpg')">
+                    <!--Function overlay wird bei Klick ausgeführt-->
+                    <img src="./img/2_Bild.jpg" alt="city_night" onclick="openOverlay('./img/2_Bild.jpg')">
+                    <img src="./img/3_Bild.jpg" alt="clouds" onclick="openOverlay('./img/3_Bild.jpg')">
+                    <img src="./img/4_Bild.jpg" alt="bird" onclick="openOverlay('./img/4_Bild.jpg')">
+                    <img src="./img/5_Bild.jpg" alt="hurricane" onclick="openOverlay('./img/5_Bild.jpg')">
+                    <img src="./img/6_Bild.jpg" alt="winter_lake" onclick="openOverlay('./img/6_Bild.jpg')">
+                    <img src="./img/7_Bild.jpg" alt="duck" onclick="openOverlay('./img/7_Bild.jpg')">
+                </section>
+
+                <section class="imgs_second_row">
+                    <img src="./img/8_Bild.jpg" alt="night_man" onclick="openOverlay('./img/8_Bild.jpg')">
+                    <img src="./img/9_Bild.jpg" alt="bird_stone" onclick="openOverlay('./img/9_Bild.jpg')">
+                    <img src="./img/10_Bild.jpg" alt="leopard" onclick="openOverlay('./img/10_Bild.jpg')">
+                    <img src="./img/11_Bild.jpg" alt="mountains" onclick="openOverlay('./img/11_Bild.jpg')">
+                    <img src="./img/12_Bild.jpg" alt="winter_tree" onclick="openOverlay('./img/12_Bild.jpg')">
+                </section>
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay d_none">
+            <!--id für JS, class für CSS, d_none um es auszublenden wenn die Seite geladen wird-->
+            <div class="overlay_content">
+
+                <div class="overlay_top">
+                    <h2 id="overlay_Pictitel">Bildname</h2>
+
+                    <button class="close_button" onclick="closeOverlay()"><img src="./img/Close_icon.svg"
+                            alt="close_icon"></button>
+                </div>
+
+                <img id="overlay_img" src="" alt="OverlayAnsicht">
+                <!--Platzhalter, um es mit JS zu verknüpfen und später das angeklickte Bild auszuwählen-->
+                <div class="overlay_navigation">
+                    <button class="arrow_button" onclick="prev_img()"><img class="arrow_button_left"
+                            src="./img/Arrow.svg" alt="arrow_left"></button>
+                    <span class="img_counter">1/12</span>
+                    <button class="arrow_button" onclick="next_img()"><img src="./img/Arrow.svg"
+                            alt="arrow_right"></button>
+
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer>
