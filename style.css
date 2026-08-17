@@ -56,26 +56,25 @@ main {
 }
 
 header{
-    height: 81px;
-    width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    height: 81px;
+    width: 100%;
 
     background-color: var(--secondary-color);
 }
 
 .header_div {
-    max-width: 1440px;
-    width: 100%;
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
+    max-width: 1440px;
+    width: 100%;
 
     padding-left: 140px;
-    
 }
 
 .content_section {
@@ -84,17 +83,18 @@ header{
     justify-content: center;
     align-items: center;
 
-    padding: 80px 0px;  
-
     max-width: 1440px;
     width: 100%;
+
+    padding: 80px 0px;  
 }
 
 .content_section h1 {
-    color: white;
     font-family: var(--texts);
     font-weight: 800;
     font-size: 52px;
+
+    color: white;
 }
 
 .img_section {
@@ -110,10 +110,10 @@ header{
 }
 
 .img_section img {
+    object-fit: cover;
+    
     height: 150px;
     width: 150px;
-
-    object-fit: cover;
 
     border: 2px solid #124658;
     border-radius: 16px;
@@ -125,7 +125,6 @@ header{
     justify-content: center;
 
     gap: 16px;
-    
 }
 
 .imgs_second_row {
@@ -138,6 +137,10 @@ header{
 }
 
 .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     position: fixed;
 
     top: 0;
@@ -146,15 +149,11 @@ header{
     width: 100%;
     height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: color-mix(in srgb, var(--primary-color) 80%, transparent);
-
     border-radius: 40px;
 
     z-index: 1000;
+
+    background-color: color-mix(in srgb, var(--primary-color) 80%, transparent);
 }
 
 .d_none {
@@ -167,9 +166,9 @@ header{
 
     padding: 32px;
 
-    background-color: var(--secondary-color);
-
     border-radius: 32px;
+
+    background-color: var(--secondary-color);
 }
 
 .overlay_top {
@@ -177,9 +176,9 @@ header{
     justify-content: space-between;
     align-items: center;
 
-    color: white;
-
     padding-bottom: 32px;
+
+    color: white;
 }
 
 .overlay_top h2 {
@@ -196,13 +195,12 @@ header{
     height: 40px;
     width: 40px;
 
-    background-color: transparent;
     border: none;
+    border-radius: 50%;
 
     cursor: pointer;
 
-    border: 0;
-    border-radius: 50%;
+    background-color: transparent;
 }
 
 .close_button:hover {
@@ -210,10 +208,12 @@ header{
 }
 
 #overlay_img {
+    object-fit: cover;
+    
     width: 100%;
     height: 250px;
 
-    object-fit: cover;
+    
 }
 
 .overlay_navigation {
@@ -221,27 +221,27 @@ header{
     justify-content: center;
     align-items: center;
 
-    color: white;
-
     gap: 56px;
     padding-top: 32px;
 
     font-family: var(--texts);
+    color: white;
 }
 
 .arrow_button {
-    height: 60px;
-    width: 60px;
-    background-color: rgba(253, 91, 79, 0.1);
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    height: 60px;
+    width: 60px;
 
     border: none;
     border-radius: 50%;
+
+    cursor: pointer;
+
+    background-color: rgba(253, 91, 79, 0.1);
 }
 
 .arrow_button:hover{
@@ -254,12 +254,12 @@ header{
 
 
 footer {
-    height: 128px;
-    width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    height: 128px;
+    width: 100%;
 
     background-color: var(--secondary-color);
     color: #627B84;

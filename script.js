@@ -30,7 +30,8 @@ let picturesName = [
 
 let currentPicture = 0;
 
-function openOverlay(index) {//overlay Funktion, um das angeklickte Bild zu öffnen
+/** overlay Funktion, um das angeklickte Bild zu öffnen*/
+function openOverlay(index) {
     
     currentPicture = index;
 
@@ -47,20 +48,23 @@ function openOverlay(index) {//overlay Funktion, um das angeklickte Bild zu öff
     updateCounter(); //die Funktion wird aufgerufen und erneuert, sobald openOverlay verwendet wird (so ändert sich der Bildzähler)
 }
 
-function closeOverlay() { //Overlay kann geschlossen werden
+/**Overlay kann geschlossen werden */
+function closeOverlay() {
     let overlay = document.getElementById('overlay');
 
     overlay.classList.add('d_none'); //wenn das x gedrückt wird, wird die class d_none aktiviert
 }
 
-function updateCounter() { //Funktion, um den Counter zu erneuern und an das jeweilige Bild anzupassen
+/**Funktion, um den Counter zu erneuern und an das jeweilige Bild anzupassen */
+function updateCounter() {
 
     let counter = document.getElementById('img_counter');
 
     counter.innerHTML = `${currentPicture + 1}/${pictures.length}`; //wir müssen zum aktuellen Bild 1 addieren, da currentPicture den Index widerspiegelt
 }
 
-function nextImg() {//sorgt dafür, dass der rechte Pfeil den Index um 1 erhöht und so das jeweilige nächste Bild angezeigt werden kann
+/**sorgt dafür, dass der rechte Pfeil den Index um 1 erhöht und so das jeweilige nächste Bild angezeigt werden kann */
+function nextImg() {
 
     currentPicture++;
 
@@ -75,7 +79,8 @@ function nextImg() {//sorgt dafür, dass der rechte Pfeil den Index um 1 erhöht
     updateCounter();//Counter wird aktualisiert
 }
 
-function prevImg() {//sorgt dafür, dass der linke Pfeil den Index um 1 verringert und so das jeweilige nächste Bild angezeigt werden kann
+/**sorgt dafür, dass der linke Pfeil den Index um 1 verringert und so das jeweilige nächste Bild angezeigt werden kann */
+function prevImg() {
 
     currentPicture--;
 
