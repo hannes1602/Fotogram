@@ -28,6 +28,31 @@ let picturesName = [
     "Winter wonderland"
 ]
 
+/**Bilder rendern */
+
+function init() { //wird benötigt, um die Bilder beim Laden der Seite anzeigen zu lassen 
+    renderPictures();
+}
+
+/**Hierüber lass ich meine Bilder in zwei Reihen anzeigen */
+function renderPictures() {
+    let imgSectionFirst = document.getElementById('imgs_first_row');
+    let imgSectionSecond = document.getElementById('imgs_second_row');
+
+    for (let i = 0; i < pictures.length; i++) {
+        if (i <= 6) {
+            imgSectionFirst.innerHTML += `
+            <img src="${pictures[i]}" alt="${picturesName[i]}" onclick="openOverlay(${i})">`;
+        } else {
+            imgSectionSecond.innerHTML += `
+            <img src="${pictures[i]}" alt="${picturesName[i]}" onclick="openOverlay(${i})">`;
+        }
+
+    }
+}
+
+/**Overlay */
+
 let currentPicture = 0;
 
 /** overlay Funktion, um das angeklickte Bild zu öffnen*/
