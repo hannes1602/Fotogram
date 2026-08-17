@@ -150,7 +150,9 @@ header{
     justify-content: center;
     align-items: center;
 
-    background-color: var(--secondary-color);
+    background-color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+
+    border-radius: 40px;
 
     z-index: 1000;
 }

@@ -13,6 +13,21 @@ let pictures = [
     "./img/12_Bild.jpg"
 ]
 
+let picturesName = [
+    "Greenland",
+    "Tokyo by night",
+    "Rain sky",
+    "Blue tit",
+    "Hurricane",
+    "Norway in winter",
+    "Moore duck",
+    "Sea at night",
+    "Snow bunting",
+    "Snow leopard",
+    "Mountains",
+    "Winter wonderland"
+]
+
 let currentPicture = 0;
 
 function openOverlay(index) {//overlay Funktion, um das angeklickte Bild zu öffnen
@@ -21,8 +36,11 @@ function openOverlay(index) {//overlay Funktion, um das angeklickte Bild zu öff
 
     let overlay = document.getElementById('overlay');
     let overlayImg = document.getElementById('overlay_img');
+    let name = document.getElementById('overlay_Pictitel');
 
-    overlay.classList.remove('d_none'); //d_none wird "entfernt", wenn Bild angeklickt wird    
+    overlay.classList.remove('d_none'); //d_none wird "entfernt", wenn Bild angeklickt wird
+
+    name.innerHTML = picturesName[currentPicture]; //beim Klick wird der jeweilige Bildname hinzugefügt
 
     overlayImg.src = pictures[currentPicture]; //der ImgPath wird in die src eingesetzt und so kann das Bild angezeigt werden
 
@@ -51,6 +69,8 @@ function nextImg() {//sorgt dafür, dass der rechte Pfeil den Index um 1 erhöht
     }
 
     document.getElementById('overlay_img').src = pictures[currentPicture];//in den Platzhalter wird die jeweilige src eingefügt
+    document.getElementById('overlay_Pictitel').innerHTML = picturesName[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
+    
 
     updateCounter();//Counter wird aktualisiert
 }
@@ -64,6 +84,8 @@ function prevImg() {//sorgt dafür, dass der linke Pfeil den Index um 1 verringe
     }
 
     document.getElementById('overlay_img').src = pictures[currentPicture];//in den Platzhalter wird die jeweilige src eingefügt
+    document.getElementById('overlay_Pictitel').innerHTML = picturesName[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
+    
 
     updateCounter();//Counter wird aktualisiert
 }
