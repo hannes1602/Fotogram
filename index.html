@@ -34,9 +34,9 @@
             </div>
         </div>
 
-        <div id="overlay" class="overlay d_none">
+        <div id="overlay" class="overlay d_none" onclick="closeOverlay()">
             <!--id für JS, class für CSS, d_none um es auszublenden wenn die Seite geladen wird-->
-            <div class="overlay_content">
+            <div class="overlay_content" onclick="event.stopPropagation()"> <!--mit diesem onclick ermöglichen wir es, dass sowohl das closeOverlay bei class "overlay" als auch beim button sein kann-->
 
                 <div class="overlay_top">
                     <h2 id="overlay_Pictitel">Bildname</h2>
