@@ -34,22 +34,16 @@ function init() { //wird benötigt, um die Bilder beim Laden der Seite anzeigen 
     renderPictures();
 }
 
-/**Hierüber lass ich meine Bilder in zwei Reihen anzeigen */
+/**Hierüber lass ich meine Bilder anzeigen */
 function renderPictures() {
-    let imgSectionFirst = document.getElementById('imgs_first_row');
-    let imgSectionSecond = document.getElementById('imgs_second_row');
+    let imgSection = document.getElementById('img_section');
 
     for (let i = 0; i < pictures.length; i++) {
-        if (i <= 6) {
-            imgSectionFirst.innerHTML += `
-            <img src="${pictures[i]}" alt="${picturesName[i]}" onclick="openOverlay(${i})">`;
-        } else {
-            imgSectionSecond.innerHTML += `
+            imgSection.innerHTML += `
             <img src="${pictures[i]}" alt="${picturesName[i]}" onclick="openOverlay(${i})">`;
         }
 
     }
-}
 
 /**Overlay */
 
@@ -64,20 +58,20 @@ function openOverlay(index) {
     let overlayImg = document.getElementById('overlay_img');
     let name = document.getElementById('overlay_Pictitel');
 
-    overlay.classList.remove('d_none'); //d_none wird "entfernt", wenn Bild angeklickt wird
-
     name.innerHTML = picturesName[currentPicture]; //beim Klick wird der jeweilige Bildname hinzugefügt
 
     overlayImg.src = pictures[currentPicture]; //der ImgPath wird in die src eingesetzt und so kann das Bild angezeigt werden
 
     updateCounter(); //die Funktion wird aufgerufen und erneuert, sobald openOverlay verwendet wird (so ändert sich der Bildzähler)
+
+    overlay.showModal();
 }
 
 /**Overlay kann geschlossen werden */
 function closeOverlay() {
     let overlay = document.getElementById('overlay');
 
-    overlay.classList.add('d_none'); //wenn das x gedrückt wird, wird die class d_none aktiviert
+    overlay.close();
 }
 
 /**Funktion, um den Counter zu erneuern und an das jeweilige Bild anzupassen */

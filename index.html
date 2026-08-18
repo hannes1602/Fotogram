@@ -24,17 +24,11 @@
             <h1>Your personal photo album</h1>
 
             <div id="img_section" class="img_section">
-                <section id="imgs_first_row" class="imgs_first_row">
-                    
-                </section>
-
-                <section id="imgs_second_row" class="imgs_second_row">
-                    
-                </section>
+                
             </div>
         </div>
 
-        <div id="overlay" class="overlay d_none" onclick="closeOverlay()">
+        <dialog id="overlay" class="overlay" onclick="closeOverlay()">
             <!--id für JS, class für CSS, d_none um es auszublenden wenn die Seite geladen wird-->
             <div class="overlay_content" onclick="event.stopPropagation()"> <!--mit diesem onclick ermöglichen wir es, dass sowohl das closeOverlay bei class "overlay" als auch beim button sein kann-->
 
@@ -57,7 +51,7 @@
                 </div>
             </div>
 
-        </div>
+        </dialog>
     </main>
 
     <footer>

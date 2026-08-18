@@ -7,27 +7,29 @@
 
 /* figtree-regular - latin */
 @font-face {
-  font-display: swap; 
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 400;
-  src: url(./fonts/figtree-v9-latin/figtree-v9-latin-regular.woff2) format('woff2');
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/figtree-v9-latin/figtree-v9-latin-regular.woff2) format('woff2');
 }
+
 /* figtree-700 - latin */
 @font-face {
-  font-display: swap;
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 700;
-  src: url(./fonts/figtree-v9-latin/figtree-v9-latin-700.woff2) format('woff2'); 
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 700;
+    src: url(./fonts/figtree-v9-latin/figtree-v9-latin-700.woff2) format('woff2');
 }
+
 /* figtree-800 - latin */
 @font-face {
-  font-display: swap; 
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 800;
-  src: url(./fonts/figtree-v9-latin/figtree-v9-latin-800.woff2) format('woff2');
+    font-display: swap;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 800;
+    src: url(./fonts/figtree-v9-latin/figtree-v9-latin-800.woff2) format('woff2');
 }
 
 /** General **/
@@ -55,7 +57,7 @@ main {
     background-color: var(--primary-color);
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -70,7 +72,7 @@ header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    
+
     max-width: 1440px;
     width: 100%;
 
@@ -86,10 +88,12 @@ header{
     max-width: 1440px;
     width: 100%;
 
-    padding: 80px 0px;  
+    padding: 80px 0px;
 }
 
 .content_section h1 {
+    text-align: center;
+
     font-family: var(--texts);
     font-weight: 800;
     font-size: 52px;
@@ -99,21 +103,26 @@ header{
 
 .img_section {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
     max-width: 1440px;
     width: 100%;
 
     padding-top: 64px;
+    padding-left: 140px;
+    padding-right: 140px;
+    gap: 16px;
 }
 
 .img_section img {
     object-fit: cover;
-    
-    height: 150px;
-    width: 150px;
+
+    min-height: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    max-width: 150px;
 
     border: 2px solid #124658;
     border-radius: 16px;
@@ -125,45 +134,27 @@ header{
     border: 2px solid #32c1f1;
 }
 
-.imgs_first_row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+dialog {
+    width: 100vw;
+    height: 100vh;
 
-    gap: 16px;
+    max-width: none;
+    max-height: none;
+
+    border: none;
+    outline: none;
+
+    background-color: color-mix(in srgb,
+            var(--primary-color) 80%,
+            transparent);
+
+    z-index: 2;
 }
 
-.imgs_second_row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    gap: 16px;
-    padding-top: 32px;
-}
-
-.overlay {
+.overlay[open] {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 40px;
-
-    z-index: 1000;
-
-    background-color: color-mix(in srgb, var(--primary-color) 80%, transparent);
-}
-
-.d_none {
-    display: none;
 }
 
 .overlay_content {
@@ -215,7 +206,7 @@ header{
 
 #overlay_img {
     object-fit: cover;
-    
+
     width: 100%;
     height: 250px;
 }
@@ -248,7 +239,7 @@ header{
     background-color: rgba(253, 91, 79, 0.1);
 }
 
-.arrow_button:hover{
+.arrow_button:hover {
     background-color: rgba(253, 91, 79, 0.3);
 }
 
@@ -266,7 +257,7 @@ footer {
     width: 100%;
 
     background-color: var(--secondary-color);
-    color: #627B84;
+    color: #b3bec2;
 }
 
 .footer_div {
@@ -279,4 +270,36 @@ footer {
 
     font-family: var(--texts);
     font-size: 14px;
+}
+
+
+/**768px**/
+
+@media (max-width: 768px) {
+
+    .header_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 0;
+    }
+
+    .img_section {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}
+
+/**480px**/
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .img_section {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
