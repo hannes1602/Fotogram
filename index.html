@@ -43,10 +43,10 @@
                 <img id="overlay_img" src="" alt="OverlayAnsicht">
                 <!--Platzhalter, um es mit JS zu verknüpfen und später das angeklickte Bild auszuwählen-->
                 <div class="overlay_navigation">
-                    <button class="arrow_button" onclick="prevImg()"><img class="arrow_button_left"
+                    <button class="arrow_button" onclick="imgSwitcher(-1)"><img class="arrow_button_left"
                             src="./img/Arrow.svg" alt="arrow_left"></button>
                     <span id="img_counter">1/12</span>
-                    <button class="arrow_button" onclick="nextImg()"><img src="./img/Arrow.svg"
+                    <button class="arrow_button" onclick="imgSwitcher(1)"><img src="./img/Arrow.svg"
                             alt="arrow_right"></button>
 
                 </div>

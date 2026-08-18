@@ -86,33 +86,20 @@ function updateCounter() {
     counter.innerHTML = `${currentPicture + 1}/${pictures.length}`; //wir müssen zum aktuellen Bild 1 addieren, da currentPicture den Index widerspiegelt
 }
 
-/**sorgt dafür, dass der rechte Pfeil den Index um 1 erhöht und so das jeweilige nächste Bild angezeigt werden kann */
-function nextImg() {
+/**Funktion, um die Bilder zu switchen. Sowohl für linken als auch rechten Button */
+function imgSwitcher(direction) {
+    currentPicture += direction;
 
-    currentPicture++;
-
-    if (currentPicture >= pictures.length) {//hiermit können wir vom 12 zum 1 Bild wieder springen
-        currentPicture = 0;
-    }
-
-    document.getElementById('overlay_img').src = pictures[currentPicture];//in den Platzhalter wird die jeweilige src eingefügt
-    document.getElementById('overlay_Pictitel').innerHTML = picturesNames[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
+    if (currentPicture >= pictures.length) {
+         currentPicture = 0;
+    } 
     
-
-    updateCounter();//Counter wird aktualisiert
-}
-
-/**sorgt dafür, dass der linke Pfeil den Index um 1 verringert und so das jeweilige nächste Bild angezeigt werden kann */
-function prevImg() {
-    currentPicture--;
-
-    if (currentPicture < 0) {//hiermit können wir vom 1. zum 12 Bild springen
+    if (currentPicture < 0){
         currentPicture = pictures.length - 1;
     }
 
-    document.getElementById('overlay_img').src = pictures[currentPicture];//in den Platzhalter wird die jeweilige src eingefügt
-    document.getElementById('overlay_Pictitel').innerHTML = picturesNames[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
-    
+    document.getElementById('overlay_img').src = pictures[currentPicture];
+    document.getElementById('overlay_Pictitel').innerHTML = picturesNames[currentPicture];
 
-    updateCounter();//Counter wird aktualisiert
+    updateCounter();
 }
