@@ -1,4 +1,4 @@
-let pictures = [
+const pictures = [
     "./img/1_Bild.jpg",
     "./img/2_Bild.jpg",
     "./img/3_Bild.jpg",
@@ -13,7 +13,7 @@ let pictures = [
     "./img/12_Bild.jpg"
 ]
 
-let picturesName = [
+const picturesNames = [
     "Greenland",
     "Tokyo by night",
     "Rain sky",
@@ -36,11 +36,15 @@ function init() { //wird benötigt, um die Bilder beim Laden der Seite anzeigen 
 
 /**Hierüber lass ich meine Bilder anzeigen */
 function renderPictures() {
-    let imgSection = document.getElementById('img_section');
+    const imgSection = document.getElementById('img_section');
 
     for (let i = 0; i < pictures.length; i++) {
             imgSection.innerHTML += `
-            <img src="${pictures[i]}" alt="${picturesName[i]}" onclick="openOverlay(${i})">`;
+            <figure>
+            <button class="img_button" onclick="openOverlay(${i})">
+            <img src="${pictures[i]}" alt="${picturesNames[i]}" >
+            </button>
+            </figure>`;
         }
 
     }
@@ -54,11 +58,11 @@ function openOverlay(index) {
     
     currentPicture = index;
 
-    let overlay = document.getElementById('overlay');
-    let overlayImg = document.getElementById('overlay_img');
-    let name = document.getElementById('overlay_Pictitel');
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay_img');
+    const name = document.getElementById('overlay_Pictitel');
 
-    name.innerHTML = picturesName[currentPicture]; //beim Klick wird der jeweilige Bildname hinzugefügt
+    name.innerHTML = picturesNames[currentPicture]; //beim Klick wird der jeweilige Bildname hinzugefügt
 
     overlayImg.src = pictures[currentPicture]; //der ImgPath wird in die src eingesetzt und so kann das Bild angezeigt werden
 
@@ -69,7 +73,7 @@ function openOverlay(index) {
 
 /**Overlay kann geschlossen werden */
 function closeOverlay() {
-    let overlay = document.getElementById('overlay');
+    const overlay = document.getElementById('overlay');
 
     overlay.close();
 }
@@ -77,7 +81,7 @@ function closeOverlay() {
 /**Funktion, um den Counter zu erneuern und an das jeweilige Bild anzupassen */
 function updateCounter() {
 
-    let counter = document.getElementById('img_counter');
+    const counter = document.getElementById('img_counter');
 
     counter.innerHTML = `${currentPicture + 1}/${pictures.length}`; //wir müssen zum aktuellen Bild 1 addieren, da currentPicture den Index widerspiegelt
 }
@@ -92,7 +96,7 @@ function nextImg() {
     }
 
     document.getElementById('overlay_img').src = pictures[currentPicture];//in den Platzhalter wird die jeweilige src eingefügt
-    document.getElementById('overlay_Pictitel').innerHTML = picturesName[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
+    document.getElementById('overlay_Pictitel').innerHTML = picturesNames[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
     
 
     updateCounter();//Counter wird aktualisiert
@@ -100,7 +104,6 @@ function nextImg() {
 
 /**sorgt dafür, dass der linke Pfeil den Index um 1 verringert und so das jeweilige nächste Bild angezeigt werden kann */
 function prevImg() {
-
     currentPicture--;
 
     if (currentPicture < 0) {//hiermit können wir vom 1. zum 12 Bild springen
@@ -108,7 +111,7 @@ function prevImg() {
     }
 
     document.getElementById('overlay_img').src = pictures[currentPicture];//in den Platzhalter wird die jeweilige src eingefügt
-    document.getElementById('overlay_Pictitel').innerHTML = picturesName[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
+    document.getElementById('overlay_Pictitel').innerHTML = picturesNames[currentPicture];//in den Platzhalter wird der jeweilige Bildname eingefügt
     
 
     updateCounter();//Counter wird aktualisiert
