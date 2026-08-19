@@ -1,35 +1,22 @@
 :root {
     --primary-color: #06171E;
     --secondary-color: #09212A;
+    --arrow-hover-color: #fd5b4f4d;
+    --arrow-background-color: #fd5b4f1a;
     --arrow-color: #FD5B4F;
+    --border-color: #124658;
+    --pic-border-hover-color: #32c1f1;
+    --standard-text-color: #ffffff;
+    --footer-text-color: #b3bec2;
     --texts: "Figtree";
 }
 
-/* figtree-regular - latin */
 @font-face {
     font-display: swap;
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;
     src: url(./fonts/figtree-v9-latin/figtree-v9-latin-regular.woff2) format('woff2');
-}
-
-/* figtree-700 - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Figtree';
-    font-style: normal;
-    font-weight: 700;
-    src: url(./fonts/figtree-v9-latin/figtree-v9-latin-700.woff2) format('woff2');
-}
-
-/* figtree-800 - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Figtree';
-    font-style: normal;
-    font-weight: 800;
-    src: url(./fonts/figtree-v9-latin/figtree-v9-latin-800.woff2) format('woff2');
 }
 
 /** General **/
@@ -100,7 +87,7 @@ header {
     font-weight: 800;
     font-size: 52px;
 
-    color: white;
+    color: var(--standard-text-color);
 }
 
 .img_section {
@@ -126,7 +113,7 @@ header {
     max-height: 150px;
     max-width: 150px;
 
-    border: 2px solid #124658;
+    border: 2px solid var(--border-color);
     border-radius: 16px;
 
     cursor: pointer;
@@ -138,7 +125,7 @@ header {
 }
 
 .img_section img:hover {
-    border: 2px solid #32c1f1;
+    border: 2px solid var(--pic-border-hover-color);
 }
 
 dialog {
@@ -182,7 +169,7 @@ dialog {
 
     padding-bottom: 32px;
 
-    color: white;
+    color: var(--standard-text-color)
 }
 
 .overlay_top h2 {
@@ -208,7 +195,7 @@ dialog {
 }
 
 .close_button:hover {
-    background-color: rgba(18, 70, 88, 1);
+    background-color: var(--border-color);
 }
 
 #overlay_img {
@@ -229,7 +216,7 @@ dialog {
     padding-right: 16px;
 
     font-family: var(--texts);
-    color: white;
+    color: var(--standard-text-color);
 }
 
 .arrow_button {
@@ -245,11 +232,11 @@ dialog {
 
     cursor: pointer;
 
-    background-color: rgba(253, 91, 79, 0.1);
+    background-color: var(--arrow-background-color);
 }
 
 .arrow_button:hover {
-    background-color: rgba(253, 91, 79, 0.3);
+    background-color: var(--arrow-hover-color);
 }
 
 .arrow_button_left {
@@ -266,7 +253,7 @@ footer {
     width: 100%;
 
     background-color: var(--secondary-color);
-    color: #b3bec2;
+    color: var(--footer-text-color);
 }
 
 .footer_div {
@@ -280,9 +267,6 @@ footer {
     font-family: var(--texts);
     font-size: 14px;
 }
-
-
-/**768px**/
 
 @media (max-width: 768px) {
 
@@ -299,8 +283,6 @@ footer {
         padding-right: 70px;
     }
 }
-
-/**480px**/
 
 @media (max-width: 480px) {
     h1 {
@@ -331,5 +313,4 @@ footer {
         width: 48px;
         height: 48px;
     }
-
 }
