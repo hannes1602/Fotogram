@@ -30,9 +30,8 @@
         </div>
 
         <dialog id="overlay" class="overlay" onclick="closeOverlay()">
-            <!--id für JS, class für CSS, d_none um es auszublenden wenn die Seite geladen wird-->
-            <div class="overlay_content" onclick="event.stopPropagation()"> <!--mit diesem onclick ermöglichen wir es, dass sowohl das closeOverlay bei class "overlay" als auch beim button sein kann-->
 
+            <div class="overlay_content" onclick="event.stopPropagation()">
                 <div class="overlay_top">
                     <h2 id="overlay_Pictitel">Bildname</h2>
 
@@ -41,7 +40,7 @@
                 </div>
 
                 <img id="overlay_img" src="" alt="OverlayAnsicht">
-                <!--Platzhalter, um es mit JS zu verknüpfen und später das angeklickte Bild auszuwählen-->
+    
                 <div class="overlay_navigation">
                     <button class="arrow_button" onclick="imgSwitcher(-1)"><img class="arrow_button_left"
                             src="./img/Arrow.svg" alt="arrow_left"></button>

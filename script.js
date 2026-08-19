@@ -28,13 +28,13 @@ const picturesNames = [
     "Winter wonderland"
 ]
 
-/**Bilder rendern */
 
-function init() { //wird benötigt, um die Bilder beim Laden der Seite anzeigen zu lassen 
+
+function init() { 
     renderPictures();
 }
 
-/**Hierüber lass ich meine Bilder anzeigen */
+
 function renderPictures() {
     const imgSection = document.getElementById('img_section');
 
@@ -49,11 +49,8 @@ function renderPictures() {
 
     }
 
-/**Overlay */
-
 let currentPicture = 0;
 
-/** overlay Funktion, um das angeklickte Bild zu öffnen*/
 function openOverlay(index) {
     
     currentPicture = index;
@@ -62,31 +59,31 @@ function openOverlay(index) {
     const overlayImg = document.getElementById('overlay_img');
     const name = document.getElementById('overlay_Pictitel');
 
-    name.innerHTML = picturesNames[currentPicture]; //beim Klick wird der jeweilige Bildname hinzugefügt
+    name.innerHTML = picturesNames[currentPicture]; 
 
-    overlayImg.src = pictures[currentPicture]; //der ImgPath wird in die src eingesetzt und so kann das Bild angezeigt werden
+    overlayImg.src = pictures[currentPicture]; 
 
-    updateCounter(); //die Funktion wird aufgerufen und erneuert, sobald openOverlay verwendet wird (so ändert sich der Bildzähler)
+    updateCounter(); 
 
     overlay.showModal();
 }
 
-/**Overlay kann geschlossen werden */
+
 function closeOverlay() {
     const overlay = document.getElementById('overlay');
 
     overlay.close();
 }
 
-/**Funktion, um den Counter zu erneuern und an das jeweilige Bild anzupassen */
+
 function updateCounter() {
 
     const counter = document.getElementById('img_counter');
 
-    counter.innerHTML = `${currentPicture + 1}/${pictures.length}`; //wir müssen zum aktuellen Bild 1 addieren, da currentPicture den Index widerspiegelt
+    counter.innerHTML = `${currentPicture + 1}/${pictures.length}`; 
 }
 
-/**Funktion, um die Bilder zu switchen. Sowohl für linken als auch rechten Button */
+
 function imgSwitcher(direction) {
     currentPicture += direction;
 
