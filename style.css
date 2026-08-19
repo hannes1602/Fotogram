@@ -1,13 +1,13 @@
 :root {
     --primary-color: #06171E;
     --secondary-color: #09212A;
+    --standard-text-color: #ffffff;
+    --footer-text-color: #b3bec2;
     --arrow-hover-color: #fd5b4f4d;
     --arrow-background-color: #fd5b4f1a;
     --arrow-color: #FD5B4F;
     --border-color: #124658;
     --pic-border-hover-color: #32c1f1;
-    --standard-text-color: #ffffff;
-    --footer-text-color: #b3bec2;
     --texts: "Figtree";
 }
 
